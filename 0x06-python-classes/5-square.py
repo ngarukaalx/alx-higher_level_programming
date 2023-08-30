@@ -4,6 +4,7 @@
 
 class Square:
     """Defines a square class"""
+
     def __init__(self, size=0):
         if isinstance(size, int) and size >= 0:
             self.__size = size
@@ -31,4 +32,6 @@ class Square:
         for j in range(self.__size):
             for i in range(self.__size):
                 print("#", end="")
+            print()
+        if self.__size == 0:
             print()
