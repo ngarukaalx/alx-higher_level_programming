@@ -1,0 +1,45 @@
+"""This module defines a fuction that adds numbers: add_integer(a, b=98).
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(3, 5)
+8
+
+>>> add_integer(3, -1)
+2
+
+The fuction also works with floating-point values
+
+>>> add_integer(1.5, 2.5)
+3
+
+>>> add_integer(4.5, 3)
+7
+
+>>> add_integer(7, 0)
+7
+
+The second argument is 98 by default
+
+>>> add_integer(7)
+105
+
+The fuction only takes numbers
+
+>>> add_integer(2, "wewe")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer("wewe", 3)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(2.3, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+"""
