@@ -17,7 +17,7 @@ This fuction module defines a matrix division fuction: matrix_divided(matrix, di
 [[1.33, 1.67, 2.0], [2.33, 2.67, 3.0]]
 
 
->>>  print(matrix)
+>>> print(matrix)
 [[1, 2, 3], [4, 5, 6]]
 
 
@@ -29,7 +29,7 @@ The fuction handles floating numbers.
 ...	[4.1, 5.1, 6.2]
 ... ]
 >>> print(matrix_divided(matrix, 2))
-[[0.55, 1.05, 1.55], [2.05, 2.55, 3.10]]
+[[0.37, 0.7, 1.03], [1.37, 1.7, 2.07]]
 
 
 The fuction raises error if values not numbers
@@ -39,11 +39,12 @@ The fuction raises error if values not numbers
 ...	[1.1, "wewe"],
 ...	["wewe", 1]
 ... ]
->>> print(matrix_divided(matrix, 2))
+>>> print(matrix_divided(matrix, 3))
 Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-Each row of the matrix must be of the same size, otherwise raise a
+
+Each row of the matrix must be of the same size
 
 >>> matrix = [
 ...	[1, 2, 3 ],
