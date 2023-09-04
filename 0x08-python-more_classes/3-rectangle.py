@@ -73,4 +73,4 @@ class Rectangle:
             for _ in range(self.__width):
                 rectangle_str += "#"
             rectangle_str += "\n"
-        return rectangle_str
+        return rectangle_str[:-1]
