@@ -1,0 +1,46 @@
+This file contains test case for my name fuction
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("hiram", "kabuagi")
+My name is hiram kabuagi
+
+>>> say_my_name("This", "love")
+My name is This love
+
+
+The fist name must be a string as well as the second
+
+>> say_my_name(123, 134)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name(None)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+At least a name should be provided
+
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+>>> say_my_name(123, "hiram")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name("hiram", 123)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+The fuction can print one name if its the only one provided and should be the first one
+
+>>> say_my_name("hiram")
+My name is hiram 
+
+>>> say_my_name({"hiram": 145}, "hiram")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name([1, 2, 2], "hiram")
+Traceback (most recent call last):
+TypeError: first_name must be a string

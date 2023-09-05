@@ -1,0 +1,37 @@
+This module contains test case for the fuction text_indentation
+that  prints a text with 2 new lines
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit.""")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<BLANKLINE>
+
+>>> text_indentation("""Quonam modo?""")
+Quonam modo?
+<BLANKLINE>
+
+When tested with a none interger it raises an error
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(" why me?")
+why me?
+<BLANKLINE>
+
+>>> text_indentation("hiram. ")
+hiram.
+<BLANKLINE>
+
+>>> text_indentation(" God is. In control")
+God is.
+<BLANKLINE>
+In control
+
+>>> text_indentation("          ")
+
+>>> text_indentation("hiram\nkabuagi.")
+hiram
+kabuagi.
+<BLANKLINE>
