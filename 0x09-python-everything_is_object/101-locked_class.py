@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module contains a class that 
+"""This module contains a class that
 prevents the user from dynamically creating new instance attributes
 """
 
