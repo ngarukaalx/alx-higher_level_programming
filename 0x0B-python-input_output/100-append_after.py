@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """This module contains fuction that nserts a line of text
 to a file, after each line containing a specific string
 """
