@@ -20,7 +20,7 @@ class Square extends Base {
       for (let s = 0; s < this.size; s++) {
         let outPut = '';
         for (let v = 0; v < this.size; v++) {
-          outPut += 'c';
+          outPut += 'C';
         }
         console.log(outPut);
       }
