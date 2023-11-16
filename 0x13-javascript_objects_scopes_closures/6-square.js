@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 const Base = require('./5-square');
 
 class Square extends Base {
@@ -13,7 +12,7 @@ class Square extends Base {
       for (let i = 0; i < this.size; i++) {
         let row = '';
         for (let j = 0; j < this.size; j++) {
-          row += 'C';
+          row += 'c';
         }
         console.log(row);
       }
