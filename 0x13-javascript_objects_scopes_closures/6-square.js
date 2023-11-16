@@ -8,11 +8,11 @@ class Square extends Base {
   }
 
   charPrint (c) {
-    if (c) {
+    if (c === undefined) {
       for (let i = 0; i < this.size; i++) {
         let row = '';
         for (let j = 0; j < this.size; j++) {
-          row += 'c';
+          row += 'X';
         }
         console.log(row);
       }
@@ -20,7 +20,7 @@ class Square extends Base {
       for (let s = 0; s < this.size; s++) {
         let outPut = '';
         for (let v = 0; v < this.size; v++) {
-          outPut += 'X';
+          outPut += 'c';
         }
         console.log(outPut);
       }
