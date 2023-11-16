@@ -17,15 +17,14 @@ class Square extends Base {
         console.log(row);
       }
     } else {
-      for (let s = 0; s < this.size; s++) {
+      for (let v = 0; v < this.size; v++) {
         let outPut = '';
-        for (let v = 0; v < this.size; v++) {
-          outPut += 'C';
+        for (let k = 0; k < this.size; k++) {
+          outPut += c;
         }
         console.log(outPut);
       }
     }
   }
 }
-
 module.exports = Square;
