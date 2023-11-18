@@ -11,20 +11,22 @@ database = sys.argv[3]
 
 try:
     connection = MySQLdb.connect(
-            host='localhost',
+            host='127.0.0.1',
             port=3306,
             user=username,
             passwd=password,
             db=database
             )
 except MySQLdb.Error as e:
+    print("Erro:", e)
     sys.exit(1)
 
 cursor = connection.cursor()
+sq_query = ("""SELECT *
+        FROM states
+        ORDER BY id ASC""")
 try:
-    cursor.execute("""SELECT *
-            FROM states
-            ORDER BY id ASC""")
+    cursor.execute(sq_query)
     rows = cursor.fetchall()
     for row in rows:
         print(row)
