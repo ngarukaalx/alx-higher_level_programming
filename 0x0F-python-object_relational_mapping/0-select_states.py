@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """script that lists all states from the database hbtn_0e_0_usa"""
 
 
@@ -26,8 +25,7 @@ if __name__ == "__main__":
 
     cursor = connection.cursor()
     sq_query = ("""SELECT *
-            FROM states
-            ORDER BY id ASC""")
+            FROM states""")
     try:
         cursor.execute(sq_query)
         rows = cursor.fetchall()
