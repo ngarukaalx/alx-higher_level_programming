@@ -11,28 +11,20 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
 
-    try:
-        connection = MySQLdb.connect(
+    connection = MySQLdb.connect(
                 host='127.0.0.1',
                 port=3306,
                 user=username,
                 passwd=password,
                 db=database
                 )
-    except MySQLdb.Error as e:
-        print("Erro:", e)
-        sys.exit(1)
 
     cursor = connection.cursor()
     sq_query = ("""SELECT *
             FROM states""")
-    try:
-        cursor.execute(sq_query)
-        rows = cursor.fetchall()
-        for row in rows:
-            print(row)
-    except MySQLdb.Error as e:
-        print("Error in execution:", e)
-    finally:
-        cursor.close()
-        connection.close()
+    cursor.execute(sq_query)
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
+    cursor.close()
+    connection.close()
