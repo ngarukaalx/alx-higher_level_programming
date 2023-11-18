@@ -15,7 +15,11 @@ if __name__ == "__main__":
             db=sys.argv[3]
             )
     cursor = connection.cursor()
-    spl_query = "SELECT * FROM states WHERE name LIKE BINARY '{}'".format(sys.argv[4])
+    spl_query = """
+            SELECT * FROM states
+            WHERE name LIKE BINARY '{}'
+            """.format(sys.argv[4])
+
     cursor.execute(spl_query)
     rows = cursor.fetchall()
     for row in rows:
