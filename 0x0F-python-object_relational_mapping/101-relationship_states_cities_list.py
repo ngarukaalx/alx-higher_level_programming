@@ -29,12 +29,10 @@ if __name__ == "__main__":
             .order_by(State.id)
             .all()
             )
-    current = None
 
-    for state, city in state_obj:
-        if state != current:
-            print("{}: {}".format(state.id, state.name))
-            current = state
-        print("    {}: {}".format(city.id, city.name))
+    for state in state_obj:
+        print("{}: {}".format(state.id, state.name))
+        for city in state.cities:
+            print("    {}: {}".format(city.id, city.name))
 
     session.close()

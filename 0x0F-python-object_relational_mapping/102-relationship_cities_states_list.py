@@ -3,8 +3,8 @@
 """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, joinedload
-from relationship_state import Base, State
 from relationship_city import City
+from relationship_state import Base, State
 from sqlalchemy.orm import relationship
 import sys
 
@@ -25,11 +25,12 @@ if __name__ == "__main__":
 
     state_obj = (
             session.query(City)
+            .options(joinedload(City.State))
             .order_by(City.id)
             .all()
             )
 
     for city in state_obj:
-        print("{}: {} -> {}".format(city.id, city.name, state_obj.name))
+        print("{}: {} -> {}".format(city.id, city.name, city.state.name))
 
     session.close()
