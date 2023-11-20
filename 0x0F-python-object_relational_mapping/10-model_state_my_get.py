@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" script that changes the name of a State object from
-the database hbtn_0e_6_usa
+""" script that prints the State object with the name passed as argument
+from the database hbtn_0e_6_usa
 """
 import sys
 from model_state import Base, State
@@ -21,12 +21,12 @@ if __name__ == "__main__":
 
     session = session()
 
-    name_update = session.query(State).filter(
-            State.id == 2).first()
+    state_obj = session.query(State).filter(
+            State.name == state_search).first()
 
-    if name_update:
-        name_update.name = 'Texas'
-
-        session.commit()
+    if state_obj:
+        print("{}".format(state_obj.id))
+    else:
+        print("Not found")
 
     session.close()
