@@ -12,6 +12,6 @@ if __name__ == "__main__":
     """only if run direct"""
 
     url = sys.argv[1]
-    r = requests.post(url, data={'email': sys.argv[2]})
+    r = requests.post(url, data={sys.argv[2]})
     text_body = f"Your email is: {r.text}"
     print(text_body)
