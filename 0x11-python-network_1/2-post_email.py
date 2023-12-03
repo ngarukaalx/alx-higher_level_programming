@@ -12,13 +12,13 @@ if __name__ == "__main__":
     """Only execute when run directly"""
 
     url = sys.argv[1]
-    email = {sys.argv[2]}
+    email = sys.argv[2]
 
     data = {'email': email}
 
     data = urllib.parse.urlencode(data)
     data = data.encode('ascii')
-    req = urllib.request.Request(url, data)
+    req = urllib.request.Request(url, data, method='POST')
     with urllib.request.urlopen(req) as response:
         the_page = response.read().decode('utf-8')
         print(the_page)
