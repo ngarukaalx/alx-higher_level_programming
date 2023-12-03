@@ -10,9 +10,7 @@ import sys
 if __name__ == "__main__":
     """run only when run directly"""
 
-    letter = sys.argv[1]
-
-    q = {'q': sys.argv[1]} if sys.argv[1] else {'q': ""}
+    q = {'q': sys.argv[1]} if sys.argv[1:] else {'q': ""}
 
     try:
         r = requests.post('http://0.0.0.0:5000/search_user', data=q)
@@ -21,8 +19,12 @@ if __name__ == "__main__":
             # no result
             print("No result")
         elif respond:
-            for item in respond:
-                if 'id' in item and 'name' in item:
-                    print("[{}] {}".format(item['id'], item['name']))
-    except json.JSONDecodeError:
+            for key, value in respond.items():
+                if key == 'id':
+                    print("[{}] ".format(value), end="")
+                elif key == 'name':
+                    print("{}".format(value))
+        else:
+            print("No result")
+    except ValueError:
         print("Not a valid JSON")
