@@ -13,6 +13,9 @@ if __name__ == "__main__":
     user_name = sys.argv[1]
     pass_wd = sys.argv[2]
     r = requests.get('https://api.github.com/user', auth=(user_name, pass_wd))
-    user_data = r.json()
-    user_id = user_data['id']
-    print(user_id)
+    if r.status_code == 200:
+        user_data = r.json()
+        user_id = user_data['id']
+        print(user_id)
+    else:
+        print("None")
