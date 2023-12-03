@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     letter = sys.argv[1]
 
-    q = {'q': letter} if letter else {'q': ""}
+    q = {'q': sys.argv[1]} if sys.argv[1] else {'q': ""}
 
     try:
         r = requests.post('http://0.0.0.0:5000/search_user', data=q)

@@ -14,4 +14,4 @@ if __name__ == "__main__":
             f"\t- type: {type(r.text)}\n"
             f"\t- content: {r.text}\n"
             )
-    print(responses)
+    print(responses, end="")
