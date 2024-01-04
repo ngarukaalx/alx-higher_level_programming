@@ -10,5 +10,8 @@ const url = args[0];
 
 // make a get request
 request(url, (error, response, body) => {
-	console.log('code:', response.statusCode);
+  if (error) {
+    // do nothing
+  }
+  console.log('code:', response.statusCode);
 });
